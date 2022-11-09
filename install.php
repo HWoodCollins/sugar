@@ -43,7 +43,7 @@ $stmt->closeCursor();
 include_once("connection.php");
 $stmt = $conn->prepare("DROP TABLE IF EXISTS TblTuck;
 CREATE TABLE TblTuck
-(TuckID INT(4) PRIMARY KEY,
+(TuckID INT(4) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 Name VARCHAR(20),
 Cost DEC(15,2),
 Quantity INT(4))");
