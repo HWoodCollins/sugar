@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    
     <title>Add Tuck</title>
-    
 </head>
 <body>
        
