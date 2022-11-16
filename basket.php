@@ -1,5 +1,5 @@
 <?php
-header("pupildoessubject.php");
+header("Location: buytuck.php");
 array_map("htmlspecialchars", $_POST);
 include_once("connection.php");
 

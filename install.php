@@ -31,7 +31,7 @@ $stmt->closeCursor();
 include_once("connection.php");
 $stmt = $conn->prepare("DROP TABLE IF EXISTS TblBasket;
 CREATE TABLE TblBasket
-(OrderID INT(4) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+(OrderID INT(4) UNSIGNED AUTO_INCREMENT,
 TuckID INT(4) NOT NULL,
 Quantity INT(4) NOT NULL,
 PRIMARY KEY(OrderID,TuckID))");
