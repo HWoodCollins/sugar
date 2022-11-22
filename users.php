@@ -12,7 +12,6 @@
         Last name:<input type="text" name="surname"><br>
         Password:<input type="password" name="passwd"><br>
         Balance:<input type="DEC" name="balance"><br>
-        Total Spent:<input type="DEC" name="totspend"><br>
         <br>
         <!--Next 3 lines create a radio button which we can use to select the user role-->
         <input type="radio" name="role" value="Pupil" checked> Pupil<br>
@@ -34,3 +33,4 @@ echo("<br>"."<br>");
 while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
 {echo($row["Forename"].' '.$row["Surname"].' - £'.$row["Wallet"]."<br>");}
 ?>
+
