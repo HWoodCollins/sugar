@@ -2,7 +2,19 @@
 2. Link databeses together
 3. Orders
 4. Baskets
-5. Role
-6. Login
-7. CSS
-8. Page linking
+5. CSS
+6. Page linking
+
+
+viewbasket.php
+addtobasket.php
+basket.php
+buy.php
+buystuff.php
+checkout.php
+emptybasket.php
+examineorder.php
+viewbasket.php
+vieworders.php
+
+https://github.com/strc12/TuckShop
