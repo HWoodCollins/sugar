@@ -1,9 +1,9 @@
 <?php
 include_once("connection.php");
-$stmt = $conn->prepare("DROP TABLE IF EXISTS TblUsers;
+$stmt = $conn->prepare("DROP TABLE IF EXISTS TblUser;
 CREATE TABLE TblUser 
 (UserID INT(4) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-Username VARCHAR(40) NOT NULL,
+Username VARCHAR(20) NOT NULL,
 Surname VARCHAR(20) NOT NULL,
 Forename VARCHAR(20) NOT NULL,
 Password VARCHAR(200) NOT NULL,
@@ -18,12 +18,10 @@ $stmt->closeCursor();
 include_once("connection.php");
 $stmt = $conn->prepare("DROP TABLE IF EXISTS TblOrders;
 CREATE TABLE TblOrders
-(OrderID INT(4) NOT NULL,
-UserID INT(4) NOT NULL,
-Date DATE NOT NULL,
-Proccessed BOOL NOT NULL,
-Declined BOOL NOT NULL,
-Cancelled BOOL NOT NULL)");
+(OrderID INT(4),
+UserID INT(4),
+Dateoforder DATETIME,
+Orderstatus INT(1))");
 $stmt->execute();
 $stmt->closeCursor();
 ?>
@@ -32,10 +30,10 @@ $stmt->closeCursor();
 include_once("connection.php");
 $stmt = $conn->prepare("DROP TABLE IF EXISTS TblBasket;
 CREATE TABLE TblBasket
-(OrderID INT(4) UNSIGNED AUTO_INCREMENT,
-TuckID INT(4) NOT NULL,
-Quantity INT(4) NOT NULL,
-PRIMARY KEY(OrderID,TuckID))");
+(OrderID INT(4),
+TuckID INT(4),
+Quantity INT(2),
+PRIMARY KEY(OrderID, TuckID))");
 $stmt->execute();
 $stmt->closeCursor();
 ?>

@@ -22,5 +22,5 @@ $stmt = $conn->prepare("SELECT * FROM Tbltuck");
 $stmt->execute();
 echo("<br>"."<br>");
 while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
-{echo($row["Name"].' '.$row["Cost"].' '.$row["Quantity"]."<br>");}
+{echo($row["Name"].' - £'.$row["Cost"].' - '.$row["Quantity"]."<br>");}
 ?>
