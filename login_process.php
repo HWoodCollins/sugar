@@ -35,3 +35,12 @@ if ($stmt->rowCount() > 0) {
 
 $conn=null;
 ?>
+
+<?php
+session_start(); 
+if (!isset($_SESSION['loggedinID']))
+{   
+    $_SESSION['backURL'] = $_SERVER['REQUEST_URI'];
+    header("Location:login.php");
+}
+?>

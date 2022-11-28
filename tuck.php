@@ -1,3 +1,12 @@
+<?php
+session_start(); 
+if (!isset($_SESSION['loggedinID']))
+{   
+    $_SESSION['backURL'] = $_SERVER['REQUEST_URI'];
+    header("Location:login.php");
+}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,6 +21,7 @@
         <input type="submit" value="Add Item">
       </form>      
 
+<a href="logout.php">Log Out</a>
 </body>
 </html>
 

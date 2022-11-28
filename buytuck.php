@@ -1,3 +1,12 @@
+<?php
+session_start(); 
+if (!isset($_SESSION['loggedinID']))
+{   
+    $_SESSION['backURL'] = $_SERVER['REQUEST_URI'];
+    header("Location:login.php");
+}
+?>
+
 <!DOCTYPE html>
 <html>
 <title>Tuck</title>
@@ -6,7 +15,6 @@
 <body>
 <?php
 include_once('connection.php');
-session_start();
 if (isset($_SESSION["tuck"])){
 	//shows number in basket if basket exists
 	echo ("Basket contains ");
@@ -26,5 +34,6 @@ if (isset($_SESSION["tuck"])){
 ?>   
 </form>
 <a href="basket.php">Checkout</a>
+<a href="logout.php">Log Out</a>
 </body>
 </html>
