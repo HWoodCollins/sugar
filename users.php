@@ -30,6 +30,7 @@ if (!isset($_SESSION['loggedinID']))
         <br>
       </form>      
 
+<a href="menu.php">Menu</a>
 <a href="logout.php">Log Out</a>
 </body>
 </html>

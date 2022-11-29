@@ -20,3 +20,4 @@ if (!isset($_SESSION['loggedinID']))
     <a href="logout.php">Log Out</a>
 </body>
 </html>
+

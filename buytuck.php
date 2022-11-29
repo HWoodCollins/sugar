@@ -34,6 +34,7 @@ if (isset($_SESSION["tuck"])){
 ?>   
 </form>
 <a href="basket.php">Checkout</a>
+<a href="menu.php">Menu</a>
 <a href="logout.php">Log Out</a>
 </body>
 </html>
