@@ -30,7 +30,7 @@ if (!isset($_SESSION['loggedinID']))
         <br>
       </form>      
 
-<a href="menu.php">Menu</a>
+<a href="menu.php">Menu</a><br>
 <a href="logout.php">Log Out</a>
 </body>
 </html>
@@ -44,4 +44,3 @@ echo("<br>"."<br>");
 while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
 {echo($row["Forename"].' '.$row["Surname"].' - £'.$row["Balance"]."<br>");}
 ?>
-

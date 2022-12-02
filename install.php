@@ -43,11 +43,10 @@ $stmt->closeCursor();
 include_once("connection.php");
 $stmt = $conn->prepare("DROP TABLE IF EXISTS TblBasket;
 CREATE TABLE TblBasket
-(ItemID INT(4) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+(OrderID INT(4),
 TuckID INT(4),
-Tuckname VARCHAR(40) NOT NULL,
 Quantity INT(2),
-Price DECIMAL(15,2))");
+PRIMARY KEY(OrderID, TuckID))");
 $stmt->execute();
 $stmt->closeCursor();
 ?>

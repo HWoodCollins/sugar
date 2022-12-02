@@ -21,7 +21,7 @@ if (!isset($_SESSION['loggedinID']))
         <input type="submit" value="Add Item">
       </form>      
 
-<a href="menu.php">Menu</a>
+<a href="menu.php">Menu</a><br>
 <a href="logout.php">Log Out</a>
 </body>
 </html>

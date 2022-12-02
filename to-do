@@ -16,3 +16,5 @@ emptybasket.php
 examineorder.php
 
 https://github.com/strc12/TuckShop
+
+//send through tuckname, tuck price, reduce quantity, view order page, complete order, edit tuck items

@@ -1,17 +1,23 @@
-<?php
-try{
-    header('Location: buytuck.php');
-    array_map("htmlspecialchars", $_POST);
-    include_once("connection.php");
 
-    $stmt = $conn->prepare("INSERT INTO Tblbasket (OrderID,TuckID,Quantity) VALUES (null,:item,:quantity)");
-    $stmt->bindParam(':item', $_POST["item"]);
-    $stmt->bindParam(':quantity', $_POST["quantity"]);
-    $stmt->execute();
-    $conn=null;
+<?php
+session_start();
+
+if (!isset($_SESSION["tuck"])){
+$_SESSION["tuck"]=array();
+}
+
+$found=FALSE;
+foreach ($_SESSION["tuck"] as &$entry){
+    
+    if ($entry["tuck"]===$_POST["TuckId"]){
+        $found=TRUE;
+        $entry["qty"]=$entry["qty"]+$_POST["qty"];
+        
+        
     }
-catch(PDOException $e)
-	{
-		echo "error".$e->getMessage();
-	}
+}
+if ($found===FALSE){
+    array_push($_SESSION["tuck"],array("tuck"=>$_POST["TuckId"],"qty"=>$_POST["qty"]));
+}
+header('Location: buytuck.php')
 ?>
