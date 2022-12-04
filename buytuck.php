@@ -23,50 +23,27 @@ $stmt->execute();
 while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
 {echo($row["Tuckname"].' - £'.$row["Price"].' - Quantity: '.$row["Quantity"]."<br>");}
 ?>
-
-<h3>Choice/Quantity:</h3>
-
-<!-- <form action="addtobasket.php" method="POST">
-    
-	<select name = "item">
-			<?php
-				include_once('connection.php');
-				$stmt = $conn->prepare("SELECT * FROM Tbltuck ORDER BY TuckID ASC");
-				$stmt->execute();
-
-				while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
-				{
-					echo('<option value='.$row["TuckID"].'>'.$row["Tuckname"].'</option>');
-				}
-				
-			?>
-	</select><br>
-
-	<input type="int" name="quantity">
-	<br>
-	<br>
-	<input type="submit" value="Add to Basket">
-</form> -->
-
+<br>
 <?php
-$stmt = $conn->prepare("SELECT * FROM TblTuck");
+include_once('connection.php');
+if (isset($_SESSION["tuck"])){
+	echo ("Basket contains ");
+	echo count($_SESSION["tuck"]);
+	echo (" items<br>");
+	echo ("<a href=viewbasket.php>View basket contents</a>");
+}
+
+	$stmt = $conn->prepare("SELECT * FROM TblTuck");
 	$stmt->execute();
 	while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
 		{
 			echo'<form action="addtobasket.php" method="post">';
-			echo($row["Tuckname"]."<input type='number' name='qty' min='1' max='5' value='1'>
-			<input type='submit' value='Add Tuck'> <input type='hidden' name='TuckId' value=".$row['TuckID']."><br></form>");
+			echo('<br>'.$row["Tuckname"].' '.$row["Tuckdescription"].' '.$row["Price"].' '.$row["Quantity"]."<input type='number' name='qty' min='1' max='5' value='1'>
+			<input type='submit' value='Add Tuck'><input type='hidden' name='TuckId' value=".$row['TuckID']."><br></form>");
 		}
-?>
-
-<?php
-$stmt = $conn->prepare("SELECT * FROM Tblbasket");
-$stmt->execute();
-echo("<br>"."<br>");
-while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
-{echo($row["TuckID"].' - '.$row["Quantity"]."<br>");}
-?>
-
+?>  
+<br> 
+<a href="checkout.php">Checkout</a>
 <br>
 <a href="menu.php">Menu</a><br>
 <a href="logout.php">Log Out</a>

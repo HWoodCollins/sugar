@@ -15,6 +15,7 @@ if (!isset($_SESSION['loggedinID']))
 <body>
    <h1>MENU</h1>
     <a href="buytuck.php">Create order</a><br>
+    <a href="vieworders.php">View orders</a><br>
     <a href="logout.php">Log Out</a>
     <br>
     <br>
