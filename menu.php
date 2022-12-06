@@ -14,8 +14,8 @@ if (!isset($_SESSION['loggedinID']))
 </head>
 <body>
    <h1>MENU</h1>
-    <a href="buytuck.php">Create order</a><br>
-    <a href="vieworders.php">View orders</a><br>
+    <a href="buytuck.php">Create Order</a><br>
+    <a href="vieworders.php">View Orders</a><br>
     <a href="logout.php">Log Out</a>
     <br>
     <br>

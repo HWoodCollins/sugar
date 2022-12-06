@@ -6,7 +6,7 @@
 <body>
     
 <?php
-echo ("<h2> Order ".$_POST["OrderId"]." contained the following items</h2>");
+echo ("<h2> Order ".$_POST["OrderId"]." contains the following items</h2>");
 
 session_start();
 
