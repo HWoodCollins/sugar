@@ -22,9 +22,11 @@ session_start();
             $total=$total+($row["qty"]*$row["tp"]);
 			echo($row["qty"]." x ".$row["tn"]." at ".$row["tp"]."<br>");
 		}
+	echo("<br>");
     echo("Total spent £".number_format($total,2)."<br>");
     
 ?>
+<br>
 <a href="vieworders.php">Back to list of orders</a>
 </body>
 </html>
